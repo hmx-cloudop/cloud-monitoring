@@ -1,0 +1,51 @@
+{
+	"metrics": {
+		"append_dimensions": {
+			"AutoScalingGroupName": "${aws:AutoScalingGroupName}",
+			"InstanceId": "${aws:InstanceId}"
+		},
+		"aggregation_dimensions": [["InstanceId","device"],["InstanceId"]],
+		"metrics_collected": {
+"statsd":{},
+"Processor": {
+        "measurement": [
+          "% Idle Time",
+          "% Interrupt Time",
+          "% User Time",
+          "% Processor Time"
+        ],
+        "metrics_collection_interval": 60,
+        "resources": [
+          "*"
+        ],
+        "append_dimensions": {
+          "d1": "win_foo",
+          "d2": "win_bar"
+        }
+      },
+"LogicalDisk": {
+        "measurement": [
+          "% Disk Write Time",
+          "% Idle Time",         
+	  "% Free Space"	
+        ],
+        "metrics_collection_interval": 60,
+        "resources": [
+          "*"
+        ]
+      },
+ "Memory": {
+         "measurement": [
+          "Available Bytes",
+          "Cache Faults/sec",
+          "Page Faults/sec",
+          "Pages/sec"
+        ],
+        "metrics_collection_interval": 60,
+        "append_dimensions": {
+          "d3": "win_bo"
+        }
+      }
+    }
+ }
+}

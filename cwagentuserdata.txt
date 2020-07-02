@@ -1,0 +1,35 @@
+1. amazon linux
+
+#!/bin/bash
+cd /home/ec2-user
+wget https://raw.githubusercontent.com/daon-moon/testcw/master/ec2-amazonlinux-install-cloudwatch-agent-and-run.sh
+sudo sh ec2-amazonlinux-install-cloudwatch-agent-and-run.sh
+
+2. ubuntu 
+
+#!/bin/bash
+cd /home/ubuntu
+wget https://raw.githubusercontent.com/daon-moon/testcw/master/ec2-ubuntu-install-cloudwatch-agent-and-run.sh
+sudo sh ec2-ubuntu-install-cloudwatch-agent-and-run.sh
+
+3. centos
+
+#!/bin/bash
+cd /home/centos
+curl -O https://raw.githubusercontent.com/daon-moon/testcw/master/ec2-centos-install-cloudwatch-agent-and-run.sh
+sudo sh ec2-centos-install-cloudwatch-agent-and-run.sh
+
+4. redhat
+
+#!/bin/bash
+cd /home/ec2-user
+curl -O https://raw.githubusercontent.com/daon-moon/testcw/master/ec2-redhat-install-cloudwatch-agent-and-run.sh
+sudo sh ec2-redhat-install-cloudwatch-agent-and-run.sh
+
+5. windows 
+
+<powershell>
+cd C:\Users\Administrator
+wget https://raw.githubusercontent.com/daon-moon/testcw/master/ec2-windows-install-cloudwatch-agent-and-run.ps1 -OutFile ./ec2-windows-install-cloudwatch-agent-and-run.ps1
+Powershell -ExecutionPolicy Bypass -File .\ec2-windows-install-cloudwatch-agent-and-run.ps1
+</powershell>
