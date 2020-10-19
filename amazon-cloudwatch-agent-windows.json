@@ -1,0 +1,34 @@
+{
+	"metrics": {
+		"append_dimensions": {
+			"AutoScalingGroupName": "${aws:AutoScalingGroupName}",
+			"InstanceId": "${aws:InstanceId}"
+		},
+		"aggregation_dimensions": [["InstanceId","device"],["InstanceId"]],
+		"metrics_collected": {
+"statsd":{},
+"LogicalDisk": {
+        "measurement": [
+	      {"name": "% Free Space", "rename": "DISKFreePercent", "unit": "Percent"}
+        ],
+        "metrics_collection_interval": 300,
+        "resources": [
+          "*"
+        ],
+	 "append_dimensions": {
+          "WinDISK": "WinDISK"          
+        }
+      },
+ "Memory": {
+         "measurement": [
+          {"name": "% Committed Bytes In Use", "rename": "MemoryUtilization", "unit": "Percent"},
+          {"name": "Available Bytes", "rename": "MemoryAvailableBytes", "unit": "Bytes"}
+        ],
+        "metrics_collection_interval": 300,
+        "append_dimensions": {
+          "WinMEM": "WinMEM"
+        }
+      }
+    }
+ }
+}
